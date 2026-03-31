@@ -12,6 +12,10 @@ public class HotelService {
             return "Debe ingresar los datos requeridos";
         }
 
+        if (!numero.matches("[123][0-9]{2}")) {
+            return "Ingrese una habitación valida";
+        }
+
         return "Debe ingresar los datos requeridos";
     }
 }
