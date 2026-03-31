@@ -11,4 +11,10 @@ public class HotelServiceTest {
         String resultado = service.registrarHabitacion("", "Juan", LocalDate.now().plusDays(1));
         assertEquals("Debe ingresar los datos requeridos", resultado);
     }
+    @Test
+    void deberiaValidarNumeroHabitacion() {
+        HotelService service = new HotelService();
+        String resultado = service.registrarHabitacion("499", "Juan", LocalDate.now().plusDays(1));
+        assertEquals("Ingrese una habitación valida", resultado);
+    }
 }
