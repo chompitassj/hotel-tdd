@@ -29,4 +29,10 @@ public class HotelServiceTest {
         String resultado = service.registrarHabitacion("101", "Carlos", LocalDate.now());
         assertEquals("Debe ingresar una fecha valida", resultado);
     }
+    @Test
+    void deberiaRegistrarCorrectamente() {
+        HotelService service = new HotelService();
+        String resultado = service.registrarHabitacion("101", "Carlos", LocalDate.now().plusDays(1));
+        assertEquals("El registro ha sido exitoso", resultado);
+    }
 }
