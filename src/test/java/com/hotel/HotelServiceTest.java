@@ -35,4 +35,10 @@ public class HotelServiceTest {
         String resultado = service.registrarHabitacion("101", "Carlos", LocalDate.now().plusDays(1));
         assertEquals("El registro ha sido exitoso", resultado);
     }
+    @Test
+    void deberiaRechazarFormatoIncorrectoHabitacion() {
+        HotelService service = new HotelService();
+        String resultado = service.registrarHabitacion("1A2", "Carlos", LocalDate.now().plusDays(1));
+        assertEquals("Ingrese una habitación valida", resultado);
+    }
 }
