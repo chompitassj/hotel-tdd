@@ -17,4 +17,10 @@ public class HotelServiceTest {
         String resultado = service.registrarHabitacion("499", "Juan", LocalDate.now().plusDays(1));
         assertEquals("Ingrese una habitación valida", resultado);
     }
+    @Test
+    void deberiaValidarNombreCliente() {
+        HotelService service = new HotelService();
+        String resultado = service.registrarHabitacion("101", "Ana", LocalDate.now().plusDays(1));
+        assertEquals("Recuerde que el nombre del cliente debe contener al menos cuatro caracteres", resultado);
+    }
 }
