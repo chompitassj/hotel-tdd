@@ -24,6 +24,6 @@ public class HotelService {
             return "Debe ingresar una fecha valida";
         }
 
-        return "Debe ingresar los datos requeridos";
+        return "El registro ha sido exitoso";
     }
 }
