@@ -20,4 +20,20 @@ class AsistenciaServiceTest {
 
         assertEquals("No se permite doble marcación", resultado);
     }
+    @Test
+    void deberiaRegistrarAsistenciaCorrectamente() {
+
+        AsistenciaRepository repoMock = mock(AsistenciaRepository.class);
+
+        when(repoMock.yaMarco("456"))
+                .thenReturn(false);
+
+        AsistenciaService service = new AsistenciaService(repoMock);
+
+        String resultado = service.marcarAsistencia("456");
+
+        assertEquals("Registro exitoso", resultado);
+
+        verify(repoMock).registrar("456");
+    }
 }
