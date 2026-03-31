@@ -20,6 +20,10 @@ public class HotelService {
             return "Recuerde que el nombre del cliente debe contener al menos cuatro caracteres";
         }
 
+        if (!fecha.isAfter(LocalDate.now())) {
+            return "Debe ingresar una fecha valida";
+        }
+
         return "Debe ingresar los datos requeridos";
     }
 }
